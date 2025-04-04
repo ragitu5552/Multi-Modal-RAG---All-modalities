@@ -1,0 +1,40 @@
+# Core dependencies
+numpy>=1.24.0
+pandas>=2.0.0
+python-dotenv>=1.0.0
+
+# LLM API
+groq>=0.4.0
+
+# Document processing
+PyPDF2>=3.0.0
+python-docx>=0.8.11
+langchain>=0.1.0
+langchain-groq>=0.1.0
+
+# Image processing
+Pillow>=10.0.0
+pytesseract>=0.3.10
+easyocr>=1.7.0
+
+# Video processing
+moviepy>=1.0.3
+whisper-timestamped>=1.12.20
+openai-whisper>=20231117
+
+# Vector database
+faiss-cpu>=1.7.4
+chromadb>=0.4.18
+
+# Embedding models
+sentence-transformers>=2.2.2
+
+# UI
+streamlit>=1.27.0
+
+# Optional - Image captioning
+transformers>=4.35.0
+torch>=2.0.0
+
+# Utilities
+tqdm>=4.66.1
