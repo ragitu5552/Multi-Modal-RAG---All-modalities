@@ -13,17 +13,6 @@
 
    -   Input: A folder containing images 🖼️, videos 🎥, and documents (PDF 📄 or Word) related to a specific domain or topic.
 
-   ##   📦 Output Deliverables
-
-   -   GitHub repository with all code and documentation 💻 
-   -   Folder containing the input data for the AI assistant to process 📂 
-   -   Video recording explaining the approach and code walkthrough 📹 
-
-   ##   🏆 Evaluation Criteria
-
-   -   Technical Depth: Efficient handling of multi-modal data, retrieval mechanisms, and response generation. 
-   -   Code Quality: Well-structured, maintainable, and documented code. 
-
    ##   👨‍💻 Code Overview
 
    ###   `streamlit_app.py`
