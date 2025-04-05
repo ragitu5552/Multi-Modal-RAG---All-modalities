@@ -4,25 +4,25 @@
 
    ##   ✨ Features
 
-   -   Processes multi-modal data (documents 📄, images 🖼️, videos 🎥) [cite: 4, 5]
-   -   Accurately answers questions related to the knowledge base [cite: 5]
-   -   Simple user interface for interacting with the AI assistant [cite: 6]
-   -   Optional: Conversational memory 🧠 [cite: 7]
+   -   Processes multi-modal data (documents 📄, images 🖼️, videos 🎥) 
+   -   Accurately answers questions related to the knowledge base 
+   -   Simple user interface for interacting with the AI assistant 
+   -   Optional: Conversational memory 🧠 
 
    ##   📥 Requirements
 
-   -   Input: A folder containing images 🖼️, videos 🎥, and documents (PDF 📄 or Word) related to a specific domain or topic. [cite: 4]
+   -   Input: A folder containing images 🖼️, videos 🎥, and documents (PDF 📄 or Word) related to a specific domain or topic.
 
    ##   📦 Output Deliverables
 
-   -   GitHub repository with all code and documentation 💻 [cite: 7]
-   -   Folder containing the input data for the AI assistant to process 📂 [cite: 7]
-   -   Video recording explaining the approach and code walkthrough 📹 [cite: 8]
+   -   GitHub repository with all code and documentation 💻 
+   -   Folder containing the input data for the AI assistant to process 📂 
+   -   Video recording explaining the approach and code walkthrough 📹 
 
    ##   🏆 Evaluation Criteria
 
-   -   Technical Depth: Efficient handling of multi-modal data, retrieval mechanisms, and response generation. [cite: 9]
-   -   Code Quality: Well-structured, maintainable, and documented code. [cite: 10]
+   -   Technical Depth: Efficient handling of multi-modal data, retrieval mechanisms, and response generation. 
+   -   Code Quality: Well-structured, maintainable, and documented code. 
 
    ##   👨‍💻 Code Overview
 
