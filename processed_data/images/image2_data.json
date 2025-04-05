@@ -1,0 +1,13 @@
+{
+  "content": "Image: image2.png\nDescription: No caption available\nExtracted Text: American shrew mole\n6.02\nOne mole of carbon dioxide\nTake a\nof the mole\n1023\nbiopsy",
+  "metadata": {
+    "source": "/content/Multi-Modal-RAG---All-modalities/Data/image2.png",
+    "file_type": "image",
+    "width": 749,
+    "height": 827,
+    "mode": "RGBA",
+    "format": "PNG",
+    "ocr_text": "American shrew mole\n6.02\nOne mole of carbon dioxide\nTake a\nof the mole\n1023\nbiopsy",
+    "caption": "No caption available"
+  }
+}

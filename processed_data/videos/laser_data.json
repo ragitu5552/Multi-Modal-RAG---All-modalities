@@ -1,0 +1,203 @@
+{
+  "content": "Video: laser.mp4\nDuration: 0:00:59\nTranscript:  How lasers work? Laser beams are high energy light beams that can be focused very tightly. But what's cool is that all photons in a laser beam have the exact same frequency or tone much like a choir of light. But who are the singers? Atoms can have different levels of energy. In their lowest energy state, they can absorb energy to get excited. If a photon with the right frequency bumps into an excited atom, the atom will release a perfect copy of the first photon before relaxing again, like a singer that sings along to the tune of the photon. Now, to create a choir of cloned photons, we only need three things. One, a box of excited atoms, two, mirrors, three, and one photon to begin with. The photon enters the box, gets cloned, the mirrors send them back at the atom to over and over again. The original photon gets multiplied that way until the beam is released through a hole in the box. When the first light choir, sorry, laser was built in 1960, it was jokingly coined a solution in se...",
+  "metadata": {
+    "source": "/content/Multi-Modal-RAG---All-modalities/Data/laser.mp4",
+    "file_type": "video",
+    "duration": 59.77,
+    "fps": 30.0,
+    "width": 360,
+    "height": 640,
+    "transcript": " How lasers work? Laser beams are high energy light beams that can be focused very tightly. But what's cool is that all photons in a laser beam have the exact same frequency or tone much like a choir of light. But who are the singers? Atoms can have different levels of energy. In their lowest energy state, they can absorb energy to get excited. If a photon with the right frequency bumps into an excited atom, the atom will release a perfect copy of the first photon before relaxing again, like a singer that sings along to the tune of the photon. Now, to create a choir of cloned photons, we only need three things. One, a box of excited atoms, two, mirrors, three, and one photon to begin with. The photon enters the box, gets cloned, the mirrors send them back at the atom to over and over again. The original photon gets multiplied that way until the beam is released through a hole in the box. When the first light choir, sorry, laser was built in 1960, it was jokingly coined a solution in search of a problem. But nowadays, lasers are used everywhere. A choir that sings with light, that's basically...",
+    "transcript_chunks": [
+      {
+        "start": 0.0,
+        "end": 59.68,
+        "text": " How lasers work? Laser beams are high energy light beams that can be focused very tightly.  But what's cool is that all photons in a laser beam have the exact same frequency or tone  much like a choir of light. But who are the singers? Atoms can have different levels of energy.  In their lowest energy state, they can absorb energy to get excited.  If a photon with the right frequency bumps into an excited atom,  the atom will release a perfect copy of the first photon before relaxing again,  like a singer that sings along to the tune of the photon.  Now, to create a choir of cloned photons, we only need three things.  One, a box of excited atoms, two, mirrors, three, and one photon to begin with.  The photon enters the box, gets cloned, the mirrors send them back at the atom to  over and over again. The original photon gets multiplied that way until the beam is released  through a hole in the box. When the first light choir, sorry, laser was built in 1960,  it was jokingly coined a solution in search of a problem. But nowadays, lasers are used everywhere.  A choir that sings with light, that's basically...",
+        "start_formatted": "0:00:00",
+        "end_formatted": "0:00:59.680000"
+      }
+    ],
+    "frame_data": [
+      {
+        "content": "Image: frame_0000_0.0s.jpg\nDescription: No caption available\nExtracted Text: ",
+        "metadata": {
+          "source": "/content/Multi-Modal-RAG---All-modalities/processed_data/videos/frames/laser/frame_0000_0.0s.jpg",
+          "file_type": "image",
+          "width": 360,
+          "height": 640,
+          "mode": "RGB",
+          "format": "JPEG",
+          "ocr_text": "",
+          "caption": "No caption available",
+          "timestamp": 0,
+          "timestamp_formatted": "0:00:00"
+        }
+      },
+      {
+        "content": "Image: frame_0001_5.0s.jpg\nDescription: No caption available\nExtracted Text: verytightly",
+        "metadata": {
+          "source": "/content/Multi-Modal-RAG---All-modalities/processed_data/videos/frames/laser/frame_0001_5.0s.jpg",
+          "file_type": "image",
+          "width": 360,
+          "height": 640,
+          "mode": "RGB",
+          "format": "JPEG",
+          "ocr_text": "verytightly",
+          "caption": "No caption available",
+          "timestamp": 5,
+          "timestamp_formatted": "0:00:05"
+        }
+      },
+      {
+        "content": "Image: frame_0002_10.0s.jpg\nDescription: No caption available\nExtracted Text: or tone;",
+        "metadata": {
+          "source": "/content/Multi-Modal-RAG---All-modalities/processed_data/videos/frames/laser/frame_0002_10.0s.jpg",
+          "file_type": "image",
+          "width": 360,
+          "height": 640,
+          "mode": "RGB",
+          "format": "JPEG",
+          "ocr_text": "or tone;",
+          "caption": "No caption available",
+          "timestamp": 10,
+          "timestamp_formatted": "0:00:10"
+        }
+      },
+      {
+        "content": "Image: frame_0003_15.0s.jpg\nDescription: No caption available\nExtracted Text: Chill\nlevels of energy:",
+        "metadata": {
+          "source": "/content/Multi-Modal-RAG---All-modalities/processed_data/videos/frames/laser/frame_0003_15.0s.jpg",
+          "file_type": "image",
+          "width": 360,
+          "height": 640,
+          "mode": "RGB",
+          "format": "JPEG",
+          "ocr_text": "Chill\nlevels of energy:",
+          "caption": "No caption available",
+          "timestamp": 15,
+          "timestamp_formatted": "0:00:15"
+        }
+      },
+      {
+        "content": "Image: frame_0004_20.0s.jpg\nDescription: No caption available\nExtracted Text: Excited\nright frequency",
+        "metadata": {
+          "source": "/content/Multi-Modal-RAG---All-modalities/processed_data/videos/frames/laser/frame_0004_20.0s.jpg",
+          "file_type": "image",
+          "width": 360,
+          "height": 640,
+          "mode": "RGB",
+          "format": "JPEG",
+          "ocr_text": "Excited\nright frequency",
+          "caption": "No caption available",
+          "timestamp": 20,
+          "timestamp_formatted": "0:00:20"
+        }
+      },
+      {
+        "content": "Image: frame_0005_25.0s.jpg\nDescription: No caption available\nExtracted Text: Chill\nrelaxing again;",
+        "metadata": {
+          "source": "/content/Multi-Modal-RAG---All-modalities/processed_data/videos/frames/laser/frame_0005_25.0s.jpg",
+          "file_type": "image",
+          "width": 360,
+          "height": 640,
+          "mode": "RGB",
+          "format": "JPEG",
+          "ocr_text": "Chill\nrelaxing again;",
+          "caption": "No caption available",
+          "timestamp": 25,
+          "timestamp_formatted": "0:00:25"
+        }
+      },
+      {
+        "content": "Image: frame_0006_30.0s.jpg\nDescription: No caption available\nExtracted Text: cloned photons",
+        "metadata": {
+          "source": "/content/Multi-Modal-RAG---All-modalities/processed_data/videos/frames/laser/frame_0006_30.0s.jpg",
+          "file_type": "image",
+          "width": 360,
+          "height": 640,
+          "mode": "RGB",
+          "format": "JPEG",
+          "ocr_text": "cloned photons",
+          "caption": "No caption available",
+          "timestamp": 30,
+          "timestamp_formatted": "0:00:30"
+        }
+      },
+      {
+        "content": "Image: frame_0007_35.0s.jpg\nDescription: No caption available\nExtracted Text: 2\nMirrors\n2mitrors",
+        "metadata": {
+          "source": "/content/Multi-Modal-RAG---All-modalities/processed_data/videos/frames/laser/frame_0007_35.0s.jpg",
+          "file_type": "image",
+          "width": 360,
+          "height": 640,
+          "mode": "RGB",
+          "format": "JPEG",
+          "ocr_text": "2\nMirrors\n2mitrors",
+          "caption": "No caption available",
+          "timestamp": 35,
+          "timestamp_formatted": "0:00:35"
+        }
+      },
+      {
+        "content": "Image: frame_0008_40.0s.jpg\nDescription: No caption available\nExtracted Text: mirrors send",
+        "metadata": {
+          "source": "/content/Multi-Modal-RAG---All-modalities/processed_data/videos/frames/laser/frame_0008_40.0s.jpg",
+          "file_type": "image",
+          "width": 360,
+          "height": 640,
+          "mode": "RGB",
+          "format": "JPEG",
+          "ocr_text": "mirrors send",
+          "caption": "No caption available",
+          "timestamp": 40,
+          "timestamp_formatted": "0:00:40"
+        }
+      },
+      {
+        "content": "Image: frame_0009_45.0s.jpg\nDescription: No caption available\nExtracted Text: beamis",
+        "metadata": {
+          "source": "/content/Multi-Modal-RAG---All-modalities/processed_data/videos/frames/laser/frame_0009_45.0s.jpg",
+          "file_type": "image",
+          "width": 360,
+          "height": 640,
+          "mode": "RGB",
+          "format": "JPEG",
+          "ocr_text": "beamis",
+          "caption": "No caption available",
+          "timestamp": 45,
+          "timestamp_formatted": "0:00:45"
+        }
+      },
+      {
+        "content": "Image: frame_0010_50.0s.jpg\nDescription: No caption available\nExtracted Text: was built",
+        "metadata": {
+          "source": "/content/Multi-Modal-RAG---All-modalities/processed_data/videos/frames/laser/frame_0010_50.0s.jpg",
+          "file_type": "image",
+          "width": 360,
+          "height": 640,
+          "mode": "RGB",
+          "format": "JPEG",
+          "ocr_text": "was built",
+          "caption": "No caption available",
+          "timestamp": 50,
+          "timestamp_formatted": "0:00:50"
+        }
+      },
+      {
+        "content": "Image: frame_0011_55.0s.jpg\nDescription: No caption available\nExtracted Text: but nowadays",
+        "metadata": {
+          "source": "/content/Multi-Modal-RAG---All-modalities/processed_data/videos/frames/laser/frame_0011_55.0s.jpg",
+          "file_type": "image",
+          "width": 360,
+          "height": 640,
+          "mode": "RGB",
+          "format": "JPEG",
+          "ocr_text": "but nowadays",
+          "caption": "No caption available",
+          "timestamp": 55,
+          "timestamp_formatted": "0:00:55"
+        }
+      }
+    ]
+  }
+}

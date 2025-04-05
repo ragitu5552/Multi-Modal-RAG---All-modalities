@@ -82,12 +82,17 @@ def create_vector_database(processed_paths, vector_db_path):
     """
     logger.info("Creating vector database...")
     
-    # Initialize vector store
-    vector_store = VectorStore(
-        embedding_model=config.EMBEDDING_MODEL,
-        vector_db_path=vector_db_path,
-        dimension=config.EMBEDDING_DIMENSION
-    )
+    try:
+        vector_store = VectorStore(
+            embedding_model=config.EMBEDDING_MODEL,
+            vector_db_path=vector_db_path,
+            dimension=config.EMBEDDING_DIMENSION
+        )
+    except TypeError:
+        vector_store = VectorStore(
+            embedding_model=config.EMBEDDING_MODEL,
+            vector_db_path=vector_db_path
+        )
     
     # Process document chunks
     documents_path = processed_paths["documents"]
@@ -118,30 +123,39 @@ def create_vector_database(processed_paths, vector_db_path):
     all_videos_file = os.path.join(videos_path, "all_video_data.json")
     
     if os.path.exists(all_videos_file):
-        import json
-        with open(all_videos_file, 'r') as f:
-            video_data = json.load(f)
-        
-        # Add main video records
-        logger.info(f"Adding {len(video_data)} video records to vector store")
-        vector_store.add_documents(video_data)
-        
-        # Extract and add transcript chunks
-        transcript_chunks = []
-        for video in video_data:
-            if 'metadata' in video and 'transcript_chunks' in video['metadata']:
-                for chunk in video['metadata']['transcript_chunks']:
-                    transcript_chunks.append({
-                        'content': chunk['text'],
-                        'metadata': {
-                            'source': video['metadata']['source'],
-                            'file_type': 'video_transcript',
-                            'start_time': chunk['start'],
-                            'end_time': chunk['end'],
-                            'start_formatted': chunk.get('start_formatted', ''),
-                            'end_formatted': chunk.get('end_formatted', '')
-                        }
-                    })
+        try:
+            with open(all_videos_file, 'r') as f:
+                video_data = json.load(f)
+            
+            # Process main video records
+            total_videos = len(video_data)
+            logger.info(f"Adding {total_videos} video records")
+            
+            for i in range(0, total_videos, batch_size):
+                batch = video_data[i:i+batch_size]
+                vector_store.add_documents(batch)
+                clear_memory()
+            
+            # Process transcripts
+            transcript_chunks = []
+            for video in video_data:
+                try:
+                    if video.get('metadata', {}).get('transcript_chunks'):
+                        for chunk in video['metadata']['transcript_chunks']:
+                            transcript_chunks.append({
+                                'content': chunk.get('text', ''),
+                                'metadata': {
+                                    'source': video['metadata'].get('source', 'unknown'),
+                                    'file_type': 'video_transcript',
+                                    'start_time': chunk.get('start', 0),
+                                    'end_time': chunk.get('end', 0),
+                                    'start_formatted': chunk.get('start_formatted', ''),
+                                    'end_formatted': chunk.get('end_formatted', '')
+                                }
+                            })
+                except Exception as e:
+                    logger.error(f"Error processing video transcript: {e}")
+                    continue
         
         if transcript_chunks:
             logger.info(f"Adding {len(transcript_chunks)} video transcript chunks to vector store")
@@ -149,20 +163,28 @@ def create_vector_database(processed_paths, vector_db_path):
         
         # Extract and add frame data
         frame_chunks = []
-        for video in video_data:
-            if 'metadata' in video and 'frame_data' in video['metadata']:
-                for frame in video['metadata']['frame_data']:
-                    if 'content' in frame:
-                        frame_chunks.append({
-                            'content': frame['content'],
-                            'metadata': {
-                                'source': video['metadata']['source'],
-                                'file_type': 'video_frame',
-                                'timestamp': frame['timestamp'],
-                                'timestamp_formatted': frame.get('timestamp_formatted', ''),
-                                'frame_number': frame.get('frame_number', '')
-                            }
-                        })
+            for video in video_data:
+                try:
+                    if video.get('metadata', {}).get('frame_data'):
+                        for frame in video['metadata']['frame_data']:
+                            try:
+                                if frame.get('content'):
+                                    frame_chunks.append({
+                                        'content': frame['content'],
+                                        'metadata': {
+                                            'source': video['metadata'].get('source', 'unknown'),
+                                            'file_type': 'video_frame',
+                                            'timestamp': frame.get('timestamp', 0),
+                                            'timestamp_formatted': frame.get('timestamp_formatted', ''),
+                                            'frame_number': frame.get('frame_number', '')
+                                        }
+                                    })
+                            except Exception as e:
+                                logger.error(f"Error processing frame: {e}")
+                                continue
+                except Exception as e:
+                    logger.error(f"Error processing video frames: {e}")
+                    continue
         
         if frame_chunks:
             logger.info(f"Adding {len(frame_chunks)} video frame chunks to vector store")
@@ -171,6 +193,110 @@ def create_vector_database(processed_paths, vector_db_path):
     # Save the vector database
     vector_store.save()
     logger.info(f"Vector database created and saved to {vector_db_path}")
+except Exception as e:
+            logger.error(f"Failed to create vector database: {e}")
+            raise
+
+# def create_vector_database(processed_paths, vector_db_path):
+#     """
+#     Create vector database from processed data.
+    
+#     Args:
+#         processed_paths: Dictionary of paths to processed data
+#         vector_db_path: Path to save vector database
+#     """
+#     logger.info("Creating vector database...")
+    
+#     # Initialize vector store
+#     vector_store = VectorStore(
+#         embedding_model=config.EMBEDDING_MODEL,
+#         vector_db_path=vector_db_path,
+#         dimension=config.EMBEDDING_DIMENSION
+#     )
+    
+#     # Process document chunks
+#     documents_path = processed_paths["documents"]
+#     all_documents_file = os.path.join(documents_path, "all_document_chunks.json")
+    
+#     if os.path.exists(all_documents_file):
+#         import json
+#         with open(all_documents_file, 'r') as f:
+#             document_chunks = json.load(f)
+        
+#         logger.info(f"Adding {len(document_chunks)} document chunks to vector store")
+#         vector_store.add_documents(document_chunks)
+    
+#     # Process image data
+#     images_path = processed_paths["images"]
+#     all_images_file = os.path.join(images_path, "all_image_data.json")
+    
+#     if os.path.exists(all_images_file):
+#         import json
+#         with open(all_images_file, 'r') as f:
+#             image_data = json.load(f)
+        
+#         logger.info(f"Adding {len(image_data)} image records to vector store")
+#         vector_store.add_documents(image_data)
+    
+#     # Process video data
+#     videos_path = processed_paths["videos"]
+#     all_videos_file = os.path.join(videos_path, "all_video_data.json")
+    
+#     if os.path.exists(all_videos_file):
+#         import json
+#         with open(all_videos_file, 'r') as f:
+#             video_data = json.load(f)
+        
+#         # Add main video records
+#         logger.info(f"Adding {len(video_data)} video records to vector store")
+#         vector_store.add_documents(video_data)
+        
+#         # Extract and add transcript chunks
+#         transcript_chunks = []
+#         for video in video_data:
+#             if 'metadata' in video and 'transcript_chunks' in video['metadata']:
+#                 for chunk in video['metadata']['transcript_chunks']:
+#                     transcript_chunks.append({
+#                         'content': chunk['text'],
+#                         'metadata': {
+#                             'source': video['metadata']['source'],
+#                             'file_type': 'video_transcript',
+#                             'start_time': chunk['start'],
+#                             'end_time': chunk['end'],
+#                             'start_formatted': chunk.get('start_formatted', ''),
+#                             'end_formatted': chunk.get('end_formatted', '')
+#                         }
+#                     })
+        
+#         if transcript_chunks:
+#             logger.info(f"Adding {len(transcript_chunks)} video transcript chunks to vector store")
+#             vector_store.add_documents(transcript_chunks)
+        
+#         # Extract and add frame data
+#         frame_chunks = []
+#         for video in video_data:
+#             if 'metadata' in video and 'frame_data' in video['metadata']:
+#                 for frame in video['metadata']['frame_data']:
+#                     if 'content' in frame:
+#                         frame_chunks.append({
+#                             'content': frame['content'],
+#                             'metadata': {
+#                                 'source': video['metadata']['source'],
+#                                 'file_type': 'video_frame',
+#                                 'timestamp': frame['timestamp'],
+#                                 'timestamp_formatted': frame.get('timestamp_formatted', ''),
+#                                 'frame_number': frame.get('frame_number', '')
+#                             }
+#                         })
+        
+#         if frame_chunks:
+#             logger.info(f"Adding {len(frame_chunks)} video frame chunks to vector store")
+#             vector_store.add_documents(frame_chunks)
+    
+#     # Save the vector database
+#     vector_store.save()
+#     logger.info(f"Vector database created and saved to {vector_db_path}")
+
 
 def main():
     """Main function to process data and initialize vector database."""

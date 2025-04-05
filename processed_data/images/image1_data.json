@@ -1,0 +1,13 @@
+{
+  "content": "Image: image1.png\nDescription: No caption available\nExtracted Text: Qh\n9234\nWnited staTES MARINES\n9\n229",
+  "metadata": {
+    "source": "/content/Multi-Modal-RAG---All-modalities/Data/image1.png",
+    "file_type": "image",
+    "width": 1127,
+    "height": 698,
+    "mode": "RGBA",
+    "format": "PNG",
+    "ocr_text": "Qh\n9234\nWnited staTES MARINES\n9\n229",
+    "caption": "No caption available"
+  }
+}
